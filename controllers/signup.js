@@ -1,12 +1,14 @@
-const handleSignUp = (req, res) => {
+const saltRounds = 10;
+
+const handleSignUp = (req, res, bcrypt) => {
     const { name, email, password } = req.body;
     if (!name || !email || !password ) {
         console.log('nie działa')
         return res.status(400).json('incorrect form submission')
-    } else {
-        console.log(`${name} ${email} ${password}`)
-        return res.json(name + email + password)
-    }
+    } 
+    bcrypt.hash(password, saltRounds, (err, hash) => {
+        return res.json('password', password, 'hash', hash)
+    })
 }
 
 module.exports = {
