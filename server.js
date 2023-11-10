@@ -34,7 +34,7 @@ app.get('/products', (req, res) => {
 
 // Single product
 app.get('/products/:id', (req, res) => {
-    const product = products.find((p) => p._id === req.params.id); // error cause no id in array
+    const product = products['all_products'].find((p) => p._id === req.params.id);
     res.json(product);
 })
 
