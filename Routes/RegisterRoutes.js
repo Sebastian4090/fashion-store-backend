@@ -11,6 +11,5 @@ const handleSignUp = (req, res, bcrypt) => {
     })
 }
 
-module.exports = {
-    handleSignUp
-}
+
+export default handleSignUp;
