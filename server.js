@@ -25,12 +25,12 @@ mongoose.connect(CONNECTION_URL)
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((err) => console.log(err.message));
 
-app.use('/import', importData);
-app.use('/products', productRoute);
+app.use('/api/import', importData);
+app.use('/api/products', productRoute);
 
 app.use(notFound);
 app.use(errorHandler);
 
 
-app.post('/sign-up', (req, res) => { handleSignUp(req, res, bcrypt) })
-app.get('/profile/:id', (req, res) => { handleProfileGet(req, res)})
+app.post('/api/sign-up', (req, res) => { handleSignUp(req, res, bcrypt) })
+app.get('/api/profile/:id', (req, res) => { handleProfileGet(req, res)})
