@@ -1,4 +1,4 @@
 # fashion-store-backend
 Backend for fashion-store
 
-Last Updated: 16.11.2023
+Last Updated: 10.12.2023
